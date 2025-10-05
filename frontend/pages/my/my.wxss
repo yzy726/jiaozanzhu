@@ -1,0 +1,225 @@
+/* pages/my/my.wxss */
+/* 页面背景样式 - 蓝色渐变背景 */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+  padding: 20rpx;
+}
+
+/* 用户信息卡片样式 */
+.user-card {
+  background-color: #ffffff;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  padding: 40rpx 20rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+/* 头像样式 */
+.avatar {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  border: 6rpx solid #40c4ff;
+  margin: 0 auto 20rpx;
+  display: block;
+  box-shadow: 0 4rpx 12rpx rgba(64, 196, 255, 0.3);
+}
+
+/* 用户名样式 */
+.user-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+  text-align: center; /* 水平居中 */
+}
+
+.user-info {
+  border: 3px solid #000; /* 边框宽度、样式和颜色 */
+  border-radius: 30px;    /* 圆角半径 */
+  padding: 10px;         /* 可选：内边距让内容不紧贴边框 */
+  background-color: #81beff;
+}
+
+/* 用户详情信息样式 */
+.user-details {
+  font-size: 48rpx;
+  color: black;
+  margin: 10rpx 0;
+  line-height: 1.6;
+  text-align: center; /* 水平居中 */
+}
+
+.user-details text {
+  display: block;
+  margin: 8rpx 0;
+}
+
+/* 按钮组样式 */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  padding: 0 20rpx;
+}
+
+/* 操作按钮样式 */
+.operation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 120rpx;
+  padding: 0 20rpx;
+  font-size: calc(60rpx * 0.9); /* 字体大小 = 按钮高度的40% */
+  line-height: 1;
+  font-weight: 500;
+  font-family: "SimSun", "宋体", serif; /* 设置宋体， fallback 到 serif */
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 32rpx; /* 圆角 */
+  box-shadow: 0 4rpx 12rpx rgba(64, 196, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.operation-btn:active {
+  background-color: #0097a7;
+  transform: scale(0.98);
+  box-shadow: 0 2rpx 8rpx rgba(0, 151, 167, 0.4);
+}
+
+/* 退出登录按钮样式 */
+.logout-btn {
+  background-color: #ff7043;
+  margin-top: 10rpx;
+  box-shadow: 0 4rpx 12rpx rgba(255, 112, 67, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 120rpx;
+  padding: 0 20rpx;
+  font-size: calc(60rpx * 0.9); /* 字体大小 = 按钮高度的40% */
+  line-height: 1;
+  font-weight: bold; /* 粗体 */
+  font-family: "SimSun", "宋体", serif; /* 设置宋体， fallback 到 serif */
+  color: black;
+  border: none;
+  border-radius: 32rpx; /* 圆角 */
+  transition: all 0.3s ease;
+}
+
+.logout-btn:active {
+  background-color: #e64a19;
+}
+
+/* 弹窗样式 */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 20rpx;
+  width: 85%;
+  max-width: 500rpx;
+  padding: 40rpx;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.code-input {
+  width: 100%;
+  height: 80rpx;
+  border: 2rpx solid #40c4ff;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  box-sizing: border-box;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-btn {
+  width: 45%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  text-align: center;
+  font-weight: 500;
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.confirm-btn {
+  background-color: #40c4ff;
+  color: white;
+}
+
+/* 校验码弹窗样式 */
+.code-modal {
+  padding: 30rpx;
+}
+
+.code-info {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.code-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #40c4ff;
+  text-align: center;
+  letter-spacing: 10rpx;
+  margin: 30rpx 0;
+  padding: 20rpx;
+  background-color: #f5f9ff;
+  border-radius: 10rpx;
+}
+
+.expire-time {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+.close-btn {
+  width: 100%;
+  height: 80rpx;
+  background-color: #40c4ff;
+  color: white;
+  border-radius: 10rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}

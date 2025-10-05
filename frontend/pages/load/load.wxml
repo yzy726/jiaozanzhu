@@ -1,0 +1,84 @@
+<view class="page-container" style="position: relative; left: 0rpx; top: 84rpx">
+  <!-- 页面标题 -->
+  <view class="page-title" style="position: relative; left: 0rpx; top: -104rpx">截图上传</view>
+  
+  <!-- 上传图片区域 -->
+  <view class="function-card upload-card" style="position: relative; left: 0rpx; top: -146rpx">
+    <view class="card-header">
+      <text class="card-title">上传图片</text>
+      <text class="card-desc">将图片上传</text>
+    </view>
+    
+    <view class="upload-area">
+      <!-- 上传按钮 -->
+      <button 
+        bindtap="chooseImage" 
+        class="primary-btn upload-btn"
+        disabled="{{isUploading}}"
+      >
+        {{isUploading ? '上传中...' : '点击上传图片'}}
+      </button>
+      
+      <!-- 已选择图片预览 -->
+      <view wx:if="{{avatarPath}}" class="image-preview">
+        <image src="{{avatarPath}}" mode="aspectFill" class="preview-img"></image>
+        <button bindtap="uploadData" class="confirm-btn">确认上传</button>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 下载历史图片区域 -->
+  <view class="function-card download-card" style="position: relative; left: 0rpx; top: -4rpx">
+    <view class="card-header">
+      <text class="card-title">下载历史图片</text>
+      <text class="card-desc">下载指定日期的图片压缩包</text>
+    </view>
+    
+    <view class="download-form">
+      <!-- 日期选择器 -->
+      <picker bindchange="bindDateChange" value="{{dateIndex}}" range="{{dateList}}">
+        <view class="form-control">
+          <text class="label">选择日期:</text>
+          <view class="picker-content">
+            {{dateList[dateIndex] || '请选择日期'}}
+            <image src="/images/arrow-down.png" class="arrow-icon"></image>
+          </view>
+        </view>
+      </picker>
+      
+      <!-- 密码输入 -->
+      <view class="form-control">
+        <text class="label">下载密码:</text>
+        <input 
+          type="password" 
+          placeholder="请输入下载密码" 
+          bindinput="inputPassword"
+          class="input-field"
+          value="{{password}}"
+        />
+      </view>
+      
+      <!-- 生成链接按钮 -->
+      <button 
+        bindtap="generateDownloadLink" 
+        class="primary-btn download-btn"
+        disabled="{{!selectedDate || !password || isGenerating}}"
+      >
+        {{isGenerating ? '生成中...' : '生成下载链接'}}
+      </button>
+      
+      <!-- 链接显示区域 -->
+      <view wx:if="{{downloadLink}}" class="link-section">
+        <view class="link-header">
+          <text class="link-title">下载链接已生成</text>
+          <text class="expire-time">有效期至: {{expireTime}}</text>
+        </view>
+        
+        <view class="link-content">
+          <text selectable="true" class="link-text">{{downloadLink}}</text>
+          <button bindtap="copyLink" class="copy-btn">复制链接</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

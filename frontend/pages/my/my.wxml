@@ -1,0 +1,51 @@
+<!-- 个人中心页面 -->
+<view class="container" style="position: relative; left: 0rpx; top: 84rpx; height: 1372rpx; display: flex; box-sizing: border-box">
+  <!-- 用户信息区域 -->
+  <view class="user-info" style="position: relative; left: 0rpx; top: -34rpx">
+    <image class="avatar" src="{{userInfo && userInfo.avatarUrl || 'https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/images/default-avatar.png'}}" style="position: relative; left: 8rpx; top: 0rpx"></image>
+    <view class="user-name">{{userInfo && userInfo.nickName || '未登录'}}</view>
+    <view class="user-details">
+      <text>学号: {{studentId || '未绑定'}}</text>
+      <text>姓名: {{studentName || '未绑定'}}</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮区域 -->
+<view class="button-group">
+  <!-- 姓名按钮 -->
+  <block wx:if="{{!isNameBound}}">
+    <button class="operation-btn" bindtap="inputStudentName">设置姓名</button>
+  </block>
+  <block wx:else>
+    <button class="operation-btn" bindtap="inputStudentName">修改姓名</button>
+  </block>
+  
+  <!-- 学号按钮 -->
+  <block wx:if="{{!isStudentIdBound}}">
+    <button class="operation-btn" bindtap="inputStudentId">设置学号</button>
+  </block>
+  <block wx:else>
+    <button class="operation-btn" bindtap="inputStudentId">修改学号</button>
+  </block>
+  
+  <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+</view>
+
+  <!-- 校验码输入弹窗 -->
+  <view class="modal-mask" wx:if="{{showCodeInput}}">
+    <view class="modal-content">
+      <view class="modal-title">请输入校验码</view>
+      <input 
+        class="code-input" 
+        placeholder="请输入6位校验码" 
+        value="{{inputCode}}" 
+        bindinput="bindCodeInput"
+        maxlength="6"
+      />
+      <view class="modal-buttons">
+        <button class="modal-btn cancel-btn" bindtap="cancelCodeInput">取消</button>
+        <button class="modal-btn confirm-btn" bindtap="confirmCodeInput">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 装饰元素 -->
+  <view class="decor-top"></view>
+  
+  <!-- 登录卡片容器 -->
+  <view class="login-card">
+    <!-- 应用标题 -->
+    <view class="title">交赞助小程序</view>
+    
+    <!-- 登录按钮 -->
+    <button bindtap="handleLogin" class="login-btn">微信快捷登录</button>
+    
+    <!-- 登录状态提示 -->
+    <view wx:if="{{token}}" class="helper-text">登录成功，欢迎使用！</view>
+    
+    <!-- 辅助说明 -->
+    <view class="helper-text" style="display: inline;">
+      登录即表示同意
+      <navigator url="/pages/policy1/privacy-policy" open-type="navigate" style="display: inline; color: #576b95;">隐私政策</navigator>
+      和
+      <navigator url="/pages/policy2/user-agreement" open-type="navigate" style="display: inline; color: #576b95;">用户协议</navigator>
+    </view>
+  </view>
+</view>

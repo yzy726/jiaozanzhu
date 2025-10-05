@@ -1,0 +1,78 @@
+/* pages/policy2/policy2.wxss */
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+  background-color: #ffffff;
+  border-bottom: 1rpx solid #eeeeee;
+  z-index: 100;
+}
+
+.back-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-icon {
+  font-size: 36rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.policy-container {
+  padding: 20rpx 30rpx;
+  background-color: #ffffff;
+  min-height: calc(100vh - 80rpx);
+  margin-top: 80rpx;
+}
+
+.h1 {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin: 40rpx 0 30rpx;
+  text-align: center;
+}
+
+.h2 {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333333;
+  margin: 30rpx 0 15rpx;
+}
+
+.p {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+}
+
+.list-item {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.6;
+  margin-left: 40rpx;
+  margin-bottom: 15rpx;
+  position: relative;
+}
+
+.list-item:before {
+  content: "•";
+  position: absolute;
+  left: -30rpx;
+  color: #666666;
+}

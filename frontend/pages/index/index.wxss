@@ -1,0 +1,134 @@
+/* pages/index/index.wxss */
+/* 基础变量定义 - 便于统一修改和维护 */
+:root {
+  --primary-color: #409eff;      /* 主色调：蓝色 */
+  --primary-light: #e8f3ff;      /* 主色浅色背景 */
+  --text-color: #303133;         /* 主要文本色 */
+  --text-light: #606266;         /* 次要文本色 */
+  --border-color: #e4e7ed;       /* 边框颜色 */
+  --white: #ffffff;              /* 白色背景 */
+  --radius: 8px;                 /* 统一圆角 */
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08); /* 标准阴影 */
+}
+
+/* 页面容器样式优化 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40rpx;
+  background-color: #f5f7fa; /* 浅灰背景提升层次感 */
+}
+
+/* 登录卡片容器 */
+.login-card {
+  width: 100%;
+  max-width: 500rpx;
+  padding: 60rpx 40rpx;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+/* 标题样式 */
+.title {
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 40rpx;
+}
+
+/* 按钮样式优化 */
+.login-btn {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: var(--primary-color);
+  color: #000000;
+  border-radius: var(--radius);
+  font-size: 32rpx;
+  font-weight: 500;
+  border: 3rpx solid #000000;
+  margin-bottom: 20rpx;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(64, 158, 255, 0.3);
+  display: flex; /* 使用 flex 布局确保完全居中 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 0; /* 清除默认内边距 */
+  text-align: center; /* 文字水平居中 */
+}
+ 
+.login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2rpx);
+  box-shadow: 0 6px 16px rgba(64, 158, 255, 0.4);
+}
+ 
+.login-btn:active {
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+/* 按钮交互效果 */
+.login-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2rpx);
+  box-shadow: 0 6px 16px rgba(64, 158, 255, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* 输入框样式（假设登录页有输入框） */
+.input-item {
+  width: 100%;
+  height: 100rpx;
+  border: 1rpx solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 24rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+.input-item:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4rpx var(--primary-light);
+  outline: none;
+}
+
+/* 辅助文本样式 */
+.helper-text {
+  font-size: 24rpx;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+/* 加载动画容器 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+/* 装饰元素 - 增强视觉效果 */
+.decor-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200rpx;
+  background: linear-gradient(135deg, #f0f9ff, transparent);
+  z-index: -1;
+}
